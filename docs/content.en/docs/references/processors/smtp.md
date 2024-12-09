@@ -50,7 +50,7 @@ pipeline:
                     #                    content_type: 'text/plain'
                     #                    body: "$[[name]] 您好，请查收您的免费授权信息! [INFINI Labs]"
                     content_type: 'text/html'
-                    body_file: '/Users/medcl/go/src/infini.sh/ops/assets/email_templates/send_trial_license.html'
+                    body_file: '/Users/medcl/go/src/github.com/rubyniu105/ops/assets/email_templates/send_trial_license.html'
 #                    attachments: #use cid in html: <img width=100 height=100 id="1" src="cid:myimg1">
 #                      - file: '/Users/medcl/Desktop/WechatIMG2783.png'
 #                        content_type: 'image/png'

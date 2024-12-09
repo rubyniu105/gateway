@@ -21,9 +21,9 @@ import (
 	log "github.com/cihub/seelog"
 	"github.com/dop251/goja"
 	"github.com/pkg/errors"
-	"infini.sh/framework/core/param"
-	"infini.sh/framework/core/util"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/param"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 )
 
 // IMPORTANT:

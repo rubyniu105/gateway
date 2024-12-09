@@ -26,11 +26,11 @@ package transform
 import (
 	"fmt"
 	log "github.com/cihub/seelog"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/util"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 	"regexp"
 )
 
@@ -58,7 +58,7 @@ func (filter *RequestBodyRegexReplace) Filter(ctx *fasthttp.RequestCtx) {
 }
 
 func init() {
-	pipeline.RegisterFilterPluginWithConfigMetadata("request_body_regex_replace",NewRequestBodyRegexReplace,&RequestBodyRegexReplace{})
+	pipeline.RegisterFilterPluginWithConfigMetadata("request_body_regex_replace", NewRequestBodyRegexReplace, &RequestBodyRegexReplace{})
 }
 
 func NewRequestBodyRegexReplace(c *config.Config) (filter pipeline.Filter, err error) {

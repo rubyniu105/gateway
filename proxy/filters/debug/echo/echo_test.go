@@ -25,8 +25,8 @@ package echo
 
 import (
 	"fmt"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/util"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/util"
 	"testing"
 )
 
@@ -37,6 +37,5 @@ func TestExtractFieldWithTags(t *testing.T) {
 	fmt.Println(string(util.MustToJSONBytes(results)))
 	results1 := pipeline.ExtractFilterMetadata(echo)
 	fmt.Println(string(util.MustToJSONBytes(results1)))
-
 
 }

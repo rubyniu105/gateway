@@ -25,11 +25,11 @@ package api
 
 import (
 	"fmt"
-	"infini.sh/framework/core/api/router"
-	"infini.sh/framework/core/orm"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/util"
-	"infini.sh/gateway/common"
+	"github.com/rubyniu105/framework/core/api/router"
+	"github.com/rubyniu105/framework/core/orm"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/gateway/common"
 	"net/http"
 	"strconv"
 	"strings"
@@ -179,7 +179,7 @@ func (h *GatewayAPI) searchFlow(w http.ResponseWriter, req *http.Request, ps htt
 
 func (h *GatewayAPI) getFlowFilters(w http.ResponseWriter, req *http.Request, ps httprouter.Params) {
 
-	meta:=pipeline.GetFilterMetadata()
+	meta := pipeline.GetFilterMetadata()
 
-	h.WriteJSON(w, meta,200)
+	h.WriteJSON(w, meta, 200)
 }

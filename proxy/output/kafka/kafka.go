@@ -26,11 +26,11 @@ package kafka
 import (
 	"context"
 	"fmt"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 	"github.com/segmentio/kafka-go"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/util"
-	"infini.sh/framework/lib/fasthttp"
 	"sync"
 	"time"
 )
@@ -78,7 +78,7 @@ func (filter *Kafka) Filter(ctx *fasthttp.RequestCtx) {
 }
 
 func init() {
-	pipeline.RegisterFilterPluginWithConfigMetadata("kafka",NewKafkaFilter,&Kafka{})
+	pipeline.RegisterFilterPluginWithConfigMetadata("kafka", NewKafkaFilter, &Kafka{})
 }
 
 func NewKafkaFilter(c *config.Config) (pipeline.Filter, error) {
@@ -109,8 +109,7 @@ func NewKafkaFilter(c *config.Config) (pipeline.Filter, error) {
 
 	runner.taskContext = context.Background()
 	runner.messages = []kafka.Message{}
-	runner.lock=sync.Mutex{}
-
+	runner.lock = sync.Mutex{}
 
 	return &runner, nil
 }

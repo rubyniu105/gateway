@@ -130,8 +130,8 @@ Let's start the gateway to have a test:
 [GATEWAY] A light-weight, powerful and high-performance elasticsearch gateway.
 [GATEWAY] 1.0.0_SNAPSHOT, 2022-04-18 07:11:09, 2023-12-31 10:10:10, 8062c4bc6e57a3fefcce71c0628d2d4141e46953
 [04-19 11:41:29] [INF] [app.go:174] initializing gateway.
-[04-19 11:41:29] [INF] [app.go:175] using config: /Users/medcl/go/src/infini.sh/gateway/gateway.yml.
-[04-19 11:41:29] [INF] [instance.go:72] workspace: /Users/medcl/go/src/infini.sh/gateway/data/gateway/nodes/c9bpg0ai4h931o4ngs3g
+[04-19 11:41:29] [INF] [app.go:175] using config: /Users/medcl/go/src/github.com/rubyniu105/gateway/gateway.yml.
+[04-19 11:41:29] [INF] [instance.go:72] workspace: /Users/medcl/go/src/github.com/rubyniu105/gateway/data/gateway/nodes/c9bpg0ai4h931o4ngs3g
 [04-19 11:41:29] [INF] [app.go:283] gateway is up and running now.
 [04-19 11:41:30] [INF] [api.go:262] api listen at: http://0.0.0.0:2900
 [04-19 11:41:30] [INF] [entry.go:312] entry [my_es_entry] listen at: http://0.0.0.0:8000

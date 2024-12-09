@@ -16,6 +16,7 @@
 // under the License.
 
 package processor
+
 //
 //import (
 //	"encoding/json"
@@ -29,9 +30,9 @@ package processor
 //	"github.com/elastic/beats/v7/libbeat/common"
 //	"github.com/elastic/beats/v7/libbeat/logp"
 //	"github.com/elastic/beats/v7/libbeat/processors"
-//	"infini.sh/gateway/proxy/filters/script/javascript"
+//	"github.com/rubyniu105/gateway/proxy/filters/script/javascript"
 //
-//	_ "infini.sh/gateway/proxy/filters/script/javascript/module/require"
+//	_ "github.com/rubyniu105/gateway/proxy/filters/script/javascript/module/require"
 //)
 //
 //func init() {

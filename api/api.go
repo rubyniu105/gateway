@@ -24,10 +24,10 @@
 package api
 
 import (
-	"infini.sh/framework/core/api"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/orm"
-	"infini.sh/gateway/common"
+	"github.com/rubyniu105/framework/core/api"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/orm"
+	"github.com/rubyniu105/gateway/common"
 	"path"
 )
 

@@ -203,8 +203,8 @@ Start the gateway as follows:
 [GATEWAY] A light-weight, powerful and high-performance elasticsearch gateway.
 [GATEWAY] 1.0.0_SNAPSHOT, 2022-04-20 08:23:56, 2023-12-31 10:10:10, 51650a5c3d6aaa436f3c8a8828ea74894c3524b9
 [04-21 13:41:21] [INF] [app.go:174] initializing gateway.
-[04-21 13:41:21] [INF] [app.go:175] using config: /Users/medcl/go/src/infini.sh/gateway/sample-configs/elasticsearch-route-by-index.yml.
-[04-21 13:41:21] [INF] [instance.go:72] workspace: /Users/medcl/go/src/infini.sh/gateway/data/gateway/nodes/c9bpg0ai4h931o4ngs3g
+[04-21 13:41:21] [INF] [app.go:175] using config: /Users/medcl/go/src/github.com/rubyniu105/gateway/sample-configs/elasticsearch-route-by-index.yml.
+[04-21 13:41:21] [INF] [instance.go:72] workspace: /Users/medcl/go/src/github.com/rubyniu105/gateway/data/gateway/nodes/c9bpg0ai4h931o4ngs3g
 [04-21 13:41:21] [INF] [app.go:283] gateway is up and running now.
 [04-21 13:41:21] [INF] [api.go:262] api listen at: http://0.0.0.0:2900
 [04-21 13:41:21] [INF] [reverseproxy.go:255] elasticsearch [es1-apm] hosts: [] => [192.168.3.188:9206]

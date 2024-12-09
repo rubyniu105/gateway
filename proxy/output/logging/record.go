@@ -25,12 +25,12 @@ package logging
 
 import (
 	"fmt"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/util"
-	"infini.sh/framework/lib/bytebufferpool"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/lib/bytebufferpool"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 	"path"
 )
 

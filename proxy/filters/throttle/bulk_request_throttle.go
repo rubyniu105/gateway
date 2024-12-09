@@ -28,13 +28,13 @@ import (
 	"strings"
 
 	log "github.com/cihub/seelog"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/elastic"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/radix"
-	"infini.sh/framework/core/util"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/elastic"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/radix"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 )
 
 type ElasticsearchBulkRequestThrottle struct {
@@ -97,7 +97,7 @@ func (this *ElasticsearchBulkRequestThrottle) Filter(ctx *fasthttp.RequestCtx) {
 			} else {
 				indexPayloadStats[index] = v + len(payloadBytes)
 			}
-		},nil)
+		}, nil)
 
 		if global.Env().IsDebug {
 			log.Debug(indexOpStats)

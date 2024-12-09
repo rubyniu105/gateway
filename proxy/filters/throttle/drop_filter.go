@@ -24,10 +24,10 @@
 package throttle
 
 import (
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/param"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/param"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 )
 
 type DropFilter struct {
@@ -43,7 +43,7 @@ func (filter *DropFilter) Filter(ctx *fasthttp.RequestCtx) {
 }
 
 func init() {
-	pipeline.RegisterFilterPluginWithConfigMetadata("drop", NewDropFilter,&DropFilter{})
+	pipeline.RegisterFilterPluginWithConfigMetadata("drop", NewDropFilter, &DropFilter{})
 }
 
 func NewDropFilter(c *config.Config) (pipeline.Filter, error) {

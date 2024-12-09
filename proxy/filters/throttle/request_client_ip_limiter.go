@@ -26,10 +26,10 @@ package throttle
 import (
 	"fmt"
 	log "github.com/cihub/seelog"
-	config "infini.sh/framework/core/config"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/lib/fasthttp"
+	config "github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 )
 
 type RequestClientIPLimitFilter struct {
@@ -38,7 +38,7 @@ type RequestClientIPLimitFilter struct {
 }
 
 func init() {
-	pipeline.RegisterFilterPluginWithConfigMetadata("request_client_ip_limiter",NewRequestClientIPLimitFilter,&RequestClientIPLimitFilter{})
+	pipeline.RegisterFilterPluginWithConfigMetadata("request_client_ip_limiter", NewRequestClientIPLimitFilter, &RequestClientIPLimitFilter{})
 }
 
 func NewRequestClientIPLimitFilter(c *config.Config) (pipeline.Filter, error) {

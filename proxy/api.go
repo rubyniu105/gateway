@@ -24,11 +24,11 @@
 package proxy
 
 import (
-	"infini.sh/framework/core/api"
-	httprouter "infini.sh/framework/core/api/router"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/util"
-	"infini.sh/gateway/common"
+	"github.com/rubyniu105/framework/core/api"
+	httprouter "github.com/rubyniu105/framework/core/api/router"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/gateway/common"
 	"net/http"
 	"path"
 )
@@ -48,10 +48,10 @@ func (this *GatewayModule) getConfig(w http.ResponseWriter, req *http.Request, p
 	v, ok := this.entryPoints[id]
 	if ok {
 		cfg := v.GetConfig()
-		data:=util.MapStr{
-			"entry":cfg,
-			"router":v.GetRouterConfig(),
-			"flows":common.GetAllFlows(),
+		data := util.MapStr{
+			"entry":  cfg,
+			"router": v.GetRouterConfig(),
+			"flows":  common.GetAllFlows(),
 		}
 
 		this.WriteJSON(w, data, 200)

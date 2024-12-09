@@ -26,7 +26,7 @@ package common
 import (
 	"github.com/buger/jsonparser"
 
-	"infini.sh/framework/core/elastic"
+	"github.com/rubyniu105/framework/core/elastic"
 )
 
 func GetScrollHitsTotal(version elastic.Version, data []byte) (int64, error) {

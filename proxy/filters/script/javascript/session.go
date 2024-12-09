@@ -19,9 +19,9 @@ package javascript
 
 import (
 	log "github.com/cihub/seelog"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/util"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 	"reflect"
 	"time"
 
@@ -194,10 +194,10 @@ func (s *session) setEvent(b *fasthttp.RequestCtx) error {
 }
 
 // runProcessFunc executes process() from the JS script.
-func (s *session) runProcessFunc(b *fasthttp.RequestCtx)error {
+func (s *session) runProcessFunc(b *fasthttp.RequestCtx) error {
 	var err error
 	defer func() {
-		if !global.Env().IsDebug{
+		if !global.Env().IsDebug {
 			if r := recover(); r != nil {
 				//log.Error("The javascript processor caused an unexpected panic "+
 				//	"while processing an event. Recovering, but please report this.",
@@ -242,7 +242,7 @@ func (s *session) runProcessFunc(b *fasthttp.RequestCtx)error {
 	}
 
 	if s.evt.IsCancelled() {
-		return  nil
+		return nil
 	}
 	return nil
 }

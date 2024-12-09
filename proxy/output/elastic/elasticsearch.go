@@ -29,14 +29,14 @@ import (
 	"time"
 
 	log "github.com/cihub/seelog"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/elastic"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/param"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/rate"
-	"infini.sh/framework/core/util"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/elastic"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/param"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/rate"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 )
 
 type Elasticsearch struct {
@@ -91,14 +91,14 @@ func init() {
 func New(c *config.Config) (pipeline.Filter, error) {
 
 	cfg := ProxyConfig{
-		Balancer:              "weight",
-		MaxResponseBodySize:   100 * 1024 * 1024,
-		MaxConnection:         5000,
-		MaxRetryTimes:         0,
-		RetryDelayInMs:        1000,
-		TLSInsecureSkipVerify: true,
-		ReadBufferSize:        4096 * 4,
-		WriteBufferSize:       4096 * 4,
+		Balancer:                           "weight",
+		MaxResponseBodySize:                100 * 1024 * 1024,
+		MaxConnection:                      5000,
+		MaxRetryTimes:                      0,
+		RetryDelayInMs:                     1000,
+		TLSInsecureSkipVerify:              true,
+		ReadBufferSize:                     4096 * 4,
+		WriteBufferSize:                    4096 * 4,
 		CheckClusterHealthWhenNotAvailable: true,
 		//maxt wait timeout for free connection
 		MaxConnWaitTimeout: util.GetDurationOrDefault("30s", 30*time.Second),

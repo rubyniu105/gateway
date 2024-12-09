@@ -25,9 +25,9 @@ package throttle
 
 import (
 	"fmt"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 	"time"
 )
 
@@ -47,7 +47,7 @@ func (filter *SleepFilter) Filter(ctx *fasthttp.RequestCtx) {
 }
 
 func init() {
-	pipeline.RegisterFilterPluginWithConfigMetadata("sleep",NewSleepFilter,&SleepFilter{})
+	pipeline.RegisterFilterPluginWithConfigMetadata("sleep", NewSleepFilter, &SleepFilter{})
 }
 
 func NewSleepFilter(c *config.Config) (pipeline.Filter, error) {

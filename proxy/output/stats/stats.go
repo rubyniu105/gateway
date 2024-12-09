@@ -25,11 +25,11 @@ package queue
 
 import (
 	"fmt"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/stats"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/stats"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 )
 
 type StatsFilter struct {
@@ -52,7 +52,7 @@ func (filter StatsFilter) Filter(ctx *fasthttp.RequestCtx) {
 }
 
 func init() {
-	pipeline.RegisterFilterPluginWithConfigMetadata("stats",NewStatsFilter,&StatsFilter{})
+	pipeline.RegisterFilterPluginWithConfigMetadata("stats", NewStatsFilter, &StatsFilter{})
 }
 
 func NewStatsFilter(c *config.Config) (pipeline.Filter, error) {

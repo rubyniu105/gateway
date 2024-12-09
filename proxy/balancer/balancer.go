@@ -25,7 +25,7 @@ package balancer
 
 import (
 	log "github.com/cihub/seelog"
-	"infini.sh/framework/core/errors"
+	"github.com/rubyniu105/framework/core/errors"
 	"sync"
 )
 

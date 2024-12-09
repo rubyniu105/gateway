@@ -30,19 +30,19 @@ import (
 	"sync"
 	"time"
 
-	"infini.sh/framework/core/conditions"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/rate"
-	"infini.sh/framework/core/rotate"
+	"github.com/rubyniu105/framework/core/conditions"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/rate"
+	"github.com/rubyniu105/framework/core/rotate"
 
 	log "github.com/cihub/seelog"
-	"infini.sh/framework/core/elastic"
-	"infini.sh/framework/core/errors"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/queue"
-	"infini.sh/framework/core/stats"
-	"infini.sh/framework/core/util"
+	"github.com/rubyniu105/framework/core/elastic"
+	"github.com/rubyniu105/framework/core/errors"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/queue"
+	"github.com/rubyniu105/framework/core/stats"
+	"github.com/rubyniu105/framework/core/util"
 )
 
 //#操作合并任务
@@ -117,16 +117,16 @@ func New(c *config.Config) (pipeline.Processor, error) {
 		Queues:               map[string]interface{}{},
 
 		Consumer: queue.ConsumerConfig{
-			Group:                  "group-001",
-			Name:                   "consumer-001",
-			FetchMinBytes:          1,
-			FetchMaxBytes:          20 * 1024 * 1024,
-			FetchMaxMessages:       500,
-			EOFRetryDelayInMs:      500,
-			FetchMaxWaitMs:         10000,
-			ConsumeTimeoutInSeconds:         60,
-			EOFMaxRetryTimes:       10,
-			ClientExpiredInSeconds: 60,
+			Group:                   "group-001",
+			Name:                    "consumer-001",
+			FetchMinBytes:           1,
+			FetchMaxBytes:           20 * 1024 * 1024,
+			FetchMaxMessages:        500,
+			EOFRetryDelayInMs:       500,
+			FetchMaxWaitMs:          10000,
+			ConsumeTimeoutInSeconds: 60,
+			EOFMaxRetryTimes:        10,
+			ClientExpiredInSeconds:  60,
 		},
 
 		DetectActiveQueue: true,

@@ -25,9 +25,9 @@ package auth
 
 import (
 	"fmt"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 )
 
 type SetBasicAuth struct {
@@ -52,7 +52,7 @@ func (filter *SetBasicAuth) Filter(ctx *fasthttp.RequestCtx) {
 }
 
 func init() {
-	pipeline.RegisterFilterPluginWithConfigMetadata("set_basic_auth",NewSetBasicAuth,&SetBasicAuth{})
+	pipeline.RegisterFilterPluginWithConfigMetadata("set_basic_auth", NewSetBasicAuth, &SetBasicAuth{})
 }
 
 func NewSetBasicAuth(c *config.Config) (pipeline.Filter, error) {

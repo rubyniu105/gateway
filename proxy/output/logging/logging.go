@@ -29,17 +29,17 @@ import (
 	"sync"
 
 	log "github.com/cihub/seelog"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/util"
-	"infini.sh/framework/lib/fastjson_marshal"
-	"infini.sh/gateway/common/model"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/lib/fastjson_marshal"
+	"github.com/rubyniu105/gateway/common/model"
 
 	"time"
 
-	"infini.sh/framework/core/queue"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/queue"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 )
 
 type RequestLogging struct {

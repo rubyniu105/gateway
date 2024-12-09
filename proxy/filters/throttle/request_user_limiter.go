@@ -26,10 +26,10 @@ package throttle
 import (
 	"fmt"
 	log "github.com/cihub/seelog"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 )
 
 type RequestUserLimitFilter struct {
@@ -38,7 +38,7 @@ type RequestUserLimitFilter struct {
 }
 
 func init() {
-	pipeline.RegisterFilterPluginWithConfigMetadata("request_user_limiter",NewRequestUserLimitFilter,&RequestUserLimitFilter{})
+	pipeline.RegisterFilterPluginWithConfigMetadata("request_user_limiter", NewRequestUserLimitFilter, &RequestUserLimitFilter{})
 }
 
 func NewRequestUserLimitFilter(c *config.Config) (pipeline.Filter, error) {

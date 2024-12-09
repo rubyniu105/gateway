@@ -16,6 +16,7 @@
 // under the License.
 
 package processor
+
 //
 //import (
 //	"github.com/dop251/goja"
@@ -24,7 +25,7 @@ package processor
 //
 //	"github.com/elastic/beats/v7/libbeat/logp"
 //	"github.com/elastic/beats/v7/libbeat/processors"
-//	"infini.sh/gateway/proxy/filters/script/javascript"
+//	"github.com/rubyniu105/gateway/proxy/filters/script/javascript"
 //)
 //
 //// Create constructors for most of the Beat processors.

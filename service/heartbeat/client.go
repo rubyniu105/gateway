@@ -28,7 +28,7 @@ package heartbeat
 import (
 	"fmt"
 	log "github.com/cihub/seelog"
-	"infini.sh/framework/core/global"
+	"github.com/rubyniu105/framework/core/global"
 	"net"
 	"runtime"
 	"time"

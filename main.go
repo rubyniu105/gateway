@@ -29,26 +29,26 @@ package main
 
 import (
 	_ "expvar"
-	"infini.sh/framework"
-	"infini.sh/framework/core/module"
-	"infini.sh/framework/core/util"
-	"infini.sh/framework/modules/api"
-	"infini.sh/framework/modules/elastic"
-	"infini.sh/framework/modules/metrics"
-	"infini.sh/framework/modules/pipeline"
-	"infini.sh/framework/modules/queue"
-	queue2 "infini.sh/framework/modules/queue/disk_queue"
-	"infini.sh/framework/modules/redis"
-	"infini.sh/framework/modules/s3"
-	stats2 "infini.sh/framework/modules/stats"
-	"infini.sh/framework/modules/task"
-	_ "infini.sh/framework/plugins"
-	stats "infini.sh/framework/plugins/stats_statsd"
-	"infini.sh/gateway/config"
-	_ "infini.sh/gateway/pipeline"
-	"infini.sh/gateway/proxy"
-	"infini.sh/gateway/service/floating_ip"
-	"infini.sh/gateway/service/forcemerge"
+	"github.com/rubyniu105/framework"
+	"github.com/rubyniu105/framework/core/module"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/modules/api"
+	"github.com/rubyniu105/framework/modules/elastic"
+	"github.com/rubyniu105/framework/modules/metrics"
+	"github.com/rubyniu105/framework/modules/pipeline"
+	"github.com/rubyniu105/framework/modules/queue"
+	queue2 "github.com/rubyniu105/framework/modules/queue/disk_queue"
+	"github.com/rubyniu105/framework/modules/redis"
+	"github.com/rubyniu105/framework/modules/s3"
+	stats2 "github.com/rubyniu105/framework/modules/stats"
+	"github.com/rubyniu105/framework/modules/task"
+	_ "github.com/rubyniu105/framework/plugins"
+	stats "github.com/rubyniu105/framework/plugins/stats_statsd"
+	"github.com/rubyniu105/gateway/config"
+	_ "github.com/rubyniu105/gateway/pipeline"
+	"github.com/rubyniu105/gateway/proxy"
+	"github.com/rubyniu105/gateway/service/floating_ip"
+	"github.com/rubyniu105/gateway/service/forcemerge"
 )
 
 func setup() {
@@ -61,12 +61,12 @@ func setup() {
 	module.RegisterSystemModule(&queue.Module{})
 	module.RegisterSystemModule(&task.TaskModule{})
 	module.RegisterSystemModule(&api.APIModule{})
-	module.RegisterModuleWithPriority(&pipeline.PipeModule{},100)
+	module.RegisterModuleWithPriority(&pipeline.PipeModule{}, 100)
 
 	module.RegisterUserPlugin(forcemerge.ForceMergeModule{})
 	module.RegisterUserPlugin(floating_ip.FloatingIPPlugin{})
 	module.RegisterUserPlugin(&metrics.MetricsModule{})
-	module.RegisterPluginWithPriority(&proxy.GatewayModule{},200)
+	module.RegisterPluginWithPriority(&proxy.GatewayModule{}, 200)
 }
 
 func start() {

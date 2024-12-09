@@ -29,14 +29,14 @@ package transform
 
 import (
 	"fmt"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 )
 
 type Cookie struct {
-	Reset bool `config:"reset"`//reset request cookies
-	Cookies map[string]string `config:"cookies"`//request cookies
+	Reset   bool              `config:"reset"`   //reset request cookies
+	Cookies map[string]string `config:"cookies"` //request cookies
 }
 
 func (filter *Cookie) Name() string {
@@ -44,17 +44,17 @@ func (filter *Cookie) Name() string {
 }
 
 func (filter *Cookie) Filter(ctx *fasthttp.RequestCtx) {
-	if filter.Reset{
+	if filter.Reset {
 		ctx.Request.Header.DelAllCookies()
 	}
 
-	for k,v:=range filter.Cookies{
-		ctx.Request.Header.SetCookie(k,v)
+	for k, v := range filter.Cookies {
+		ctx.Request.Header.SetCookie(k, v)
 	}
 }
 
 func init() {
-	pipeline.RegisterFilterPluginWithConfigMetadata("set_request_cookie", NewCookieFilter,&Cookie{})
+	pipeline.RegisterFilterPluginWithConfigMetadata("set_request_cookie", NewCookieFilter, &Cookie{})
 }
 
 func NewCookieFilter(c *config.Config) (pipeline.Filter, error) {

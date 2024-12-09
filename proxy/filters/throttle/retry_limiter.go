@@ -26,12 +26,12 @@ package throttle
 import (
 	"fmt"
 	log "github.com/cihub/seelog"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/queue"
-	"infini.sh/framework/core/util"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/queue"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 	"time"
 )
 
@@ -58,18 +58,18 @@ func (filter *RetryLimiter) Filter(ctx *fasthttp.RequestCtx) {
 			times = t
 		}
 	}
-	if global.Env().IsDebug{
-		log.Debugf("retry times: %v > %v",times,filter.MaxRetryTimes)
+	if global.Env().IsDebug {
+		log.Debugf("retry times: %v > %v", times, filter.MaxRetryTimes)
 	}
 
 	if times > filter.MaxRetryTimes {
-		log.Debugf("hit max retry times: %v > %v",times,filter.MaxRetryTimes)
+		log.Debugf("hit max retry times: %v > %v", times, filter.MaxRetryTimes)
 		ctx.Finished()
 		ctx.Request.Header.Del(RetryKey)
 		queue.Push(queue.GetOrInitConfig(filter.Queue), ctx.Request.Encode())
 		time.Sleep(time.Duration(filter.SleepInterval) * time.Millisecond)
-		if len(filter.TagsOnSuccess)>0{
-			ctx.UpdateTags(filter.TagsOnSuccess,nil)
+		if len(filter.TagsOnSuccess) > 0 {
+			ctx.UpdateTags(filter.TagsOnSuccess, nil)
 		}
 		return
 	}
@@ -79,7 +79,7 @@ func (filter *RetryLimiter) Filter(ctx *fasthttp.RequestCtx) {
 }
 
 func init() {
-	pipeline.RegisterFilterPluginWithConfigMetadata("retry_limiter",pipeline.FilterConfigChecked(NewRetryLimiter, pipeline.RequireFields("queue_name")),&RetryLimiter{})
+	pipeline.RegisterFilterPluginWithConfigMetadata("retry_limiter", pipeline.FilterConfigChecked(NewRetryLimiter, pipeline.RequireFields("queue_name")), &RetryLimiter{})
 }
 
 func NewRetryLimiter(c *config.Config) (pipeline.Filter, error) {

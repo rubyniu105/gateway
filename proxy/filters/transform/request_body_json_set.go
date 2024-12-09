@@ -30,10 +30,10 @@ import (
 	"fmt"
 	"github.com/buger/jsonparser"
 	log "github.com/cihub/seelog"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/util"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 	"strings"
 )
 
@@ -77,7 +77,7 @@ func (filter *RequestBodyJsonSet) Filter(ctx *fasthttp.RequestCtx) {
 }
 
 func init() {
-	pipeline.RegisterFilterPluginWithConfigMetadata("request_body_json_set",NewRequestBodyJsonSet,&RequestBodyJsonSet{})
+	pipeline.RegisterFilterPluginWithConfigMetadata("request_body_json_set", NewRequestBodyJsonSet, &RequestBodyJsonSet{})
 }
 
 func NewRequestBodyJsonSet(c *config.Config) (pipeline.Filter, error) {

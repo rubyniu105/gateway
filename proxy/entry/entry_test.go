@@ -24,8 +24,8 @@
 package entry
 
 import (
-	config3 "infini.sh/framework/core/config"
-	"infini.sh/gateway/common"
+	config3 "github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/gateway/common"
 	"testing"
 )
 
@@ -44,7 +44,7 @@ func TestMulti(t *testing.T) {
 		panic(err)
 	}
 
-	err= entry.Stop()
+	err = entry.Stop()
 	if err != nil {
 		panic(err)
 	}

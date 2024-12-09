@@ -29,14 +29,14 @@ import (
 
 	"github.com/buger/jsonparser"
 	log "github.com/cihub/seelog"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/elastic"
+	"github.com/rubyniu105/framework/core/errors"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 	"github.com/valyala/fasttemplate"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/elastic"
-	"infini.sh/framework/core/errors"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/util"
-	"infini.sh/framework/lib/fasthttp"
 )
 
 type RequestTemplate struct {

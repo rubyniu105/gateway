@@ -25,8 +25,8 @@ package api
 
 import (
 	"fmt"
-	"infini.sh/framework/core/util"
-	"infini.sh/gateway/common"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/gateway/common"
 	"testing"
 )
 

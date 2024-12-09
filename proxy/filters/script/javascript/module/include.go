@@ -19,10 +19,10 @@ package module
 
 import (
 	// Register javascript modules.
-	_ "infini.sh/gateway/proxy/filters/script/javascript/module/console"
-	_ "infini.sh/gateway/proxy/filters/script/javascript/module/net"
-	_ "infini.sh/gateway/proxy/filters/script/javascript/module/path"
-	_ "infini.sh/gateway/proxy/filters/script/javascript/module/processor"
-	_ "infini.sh/gateway/proxy/filters/script/javascript/module/require"
-	_ "infini.sh/gateway/proxy/filters/script/javascript/module/windows"
+	_ "github.com/rubyniu105/gateway/proxy/filters/script/javascript/module/console"
+	_ "github.com/rubyniu105/gateway/proxy/filters/script/javascript/module/net"
+	_ "github.com/rubyniu105/gateway/proxy/filters/script/javascript/module/path"
+	_ "github.com/rubyniu105/gateway/proxy/filters/script/javascript/module/processor"
+	_ "github.com/rubyniu105/gateway/proxy/filters/script/javascript/module/require"
+	_ "github.com/rubyniu105/gateway/proxy/filters/script/javascript/module/windows"
 )

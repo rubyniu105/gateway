@@ -31,19 +31,19 @@ import (
 
 	"github.com/buger/jsonparser"
 	log "github.com/cihub/seelog"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/elastic"
+	"github.com/rubyniu105/framework/core/errors"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/queue"
+	"github.com/rubyniu105/framework/core/rate"
+	"github.com/rubyniu105/framework/core/stats"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/lib/bytebufferpool"
+	"github.com/rubyniu105/framework/lib/fasthttp"
+	"github.com/rubyniu105/gateway/common"
 	"github.com/savsgio/gotils/bytes"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/elastic"
-	"infini.sh/framework/core/errors"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/queue"
-	"infini.sh/framework/core/rate"
-	"infini.sh/framework/core/stats"
-	"infini.sh/framework/core/util"
-	"infini.sh/framework/lib/bytebufferpool"
-	"infini.sh/framework/lib/fasthttp"
-	"infini.sh/gateway/common"
 )
 
 var JSON_CONTENT_TYPE = "application/json"
@@ -402,13 +402,13 @@ func (this *BulkReshuffle) Filter(ctx *fasthttp.RequestCtx) {
 				panic(errors.Error("queue key can't be nil"))
 			}
 
-			var skipInit=false
+			var skipInit = false
 			cfg1, ok := queue.SmartGetConfig(queueKey)
 			if ok && len(cfg1.Labels) > 0 {
-				_,ok:=cfg1.Labels["type"] //check label bulk_reshuffle exists
-				if ok{
+				_, ok := cfg1.Labels["type"] //check label bulk_reshuffle exists
+				if ok {
 					queueConfig = cfg1
-					skipInit=true
+					skipInit = true
 				}
 			}
 
@@ -455,8 +455,8 @@ func (this *BulkReshuffle) Filter(ctx *fasthttp.RequestCtx) {
 			if !ok {
 				if this.config.BufferPoolEnabled {
 					buff = this.docBufferPool.Get()
-				}else{
-					buff=&bytebufferpool.ByteBuffer{}
+				} else {
+					buff = &bytebufferpool.ByteBuffer{}
 				}
 				docBuf[queueConfig.Name] = buff
 			}
@@ -474,8 +474,8 @@ func (this *BulkReshuffle) Filter(ctx *fasthttp.RequestCtx) {
 				if !ok {
 					if this.config.BufferPoolEnabled {
 						buff = this.docBufferPool.Get()
-					}else{
-						buff=&bytebufferpool.ByteBuffer{}
+					} else {
+						buff = &bytebufferpool.ByteBuffer{}
 					}
 					docBuf[queueConfig.Name] = buff
 				}

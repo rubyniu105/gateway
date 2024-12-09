@@ -27,14 +27,14 @@ import (
 	"runtime"
 
 	log "github.com/cihub/seelog"
-	"infini.sh/framework/core/api"
-	. "infini.sh/framework/core/config"
-	"infini.sh/framework/core/env"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/util"
-	api2 "infini.sh/gateway/api"
-	"infini.sh/gateway/common"
-	"infini.sh/gateway/proxy/entry"
+	"github.com/rubyniu105/framework/core/api"
+	. "github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/env"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/util"
+	api2 "github.com/rubyniu105/gateway/api"
+	"github.com/rubyniu105/gateway/common"
+	"github.com/rubyniu105/gateway/proxy/entry"
 )
 
 type GatewayModule struct {
@@ -262,19 +262,19 @@ func (module *GatewayModule) loadEntryPoints() map[string]*entry.Entrypoint {
 	entryConfigs := []common.EntryConfig{}
 
 	ok, err := env.ParseConfig("gateway", &module)
-	if ok && err != nil  &&global.Env().SystemConfig.Configs.PanicOnConfigError{
+	if ok && err != nil && global.Env().SystemConfig.Configs.PanicOnConfigError {
 		panic(err)
 	}
 
 	ok, err = env.ParseConfig("entry", &entryConfigs)
-	if ok && err != nil  &&global.Env().SystemConfig.Configs.PanicOnConfigError{
+	if ok && err != nil && global.Env().SystemConfig.Configs.PanicOnConfigError {
 		panic(err)
 	}
 
 	log.Trace(util.ToJson(entryConfigs, true))
 
 	ok, err = env.ParseConfig("flow", &flowConfigs)
-	if ok && err != nil  &&global.Env().SystemConfig.Configs.PanicOnConfigError{
+	if ok && err != nil && global.Env().SystemConfig.Configs.PanicOnConfigError {
 		panic(err)
 	}
 

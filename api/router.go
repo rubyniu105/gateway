@@ -25,10 +25,10 @@ package api
 
 import (
 	"fmt"
-	"infini.sh/framework/core/api/router"
-	"infini.sh/framework/core/orm"
-	"infini.sh/framework/core/util"
-	"infini.sh/gateway/common"
+	"github.com/rubyniu105/framework/core/api/router"
+	"github.com/rubyniu105/framework/core/orm"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/gateway/common"
 	"net/http"
 	"strconv"
 	"strings"

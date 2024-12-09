@@ -27,8 +27,8 @@
 package common
 
 import (
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/orm"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/orm"
 )
 
 type EntryConfig struct {

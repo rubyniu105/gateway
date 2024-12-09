@@ -34,17 +34,17 @@ import (
 	"time"
 
 	log "github.com/cihub/seelog"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/elastic"
-	"infini.sh/framework/core/errors"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/queue"
-	"infini.sh/framework/core/util"
-	"infini.sh/framework/lib/fasthttp"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/elastic"
+	"github.com/rubyniu105/framework/core/errors"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/queue"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/lib/fasthttp"
 )
 
-var defaultHTTPPool=fasthttp.NewRequestResponsePool("queue_consumer")
+var defaultHTTPPool = fasthttp.NewRequestResponsePool("queue_consumer")
 
 type DiskQueueConsumer struct {
 	config Config
@@ -186,10 +186,9 @@ func (processor *DiskQueueConsumer) NewBulkWorker(ctx *pipeline.Context, count *
 	var initOfffset queue.Offset
 	var offset queue.Offset
 
-
 	//acquire consumer
-	consumerInstance, err := queue.AcquireConsumer(qConfig, consumer,ctx.ID())
-	defer queue.ReleaseConsumer(qConfig, consumer,consumerInstance)
+	consumerInstance, err := queue.AcquireConsumer(qConfig, consumer, ctx.ID())
+	defer queue.ReleaseConsumer(qConfig, consumer, consumerInstance)
 
 	if err != nil || consumerInstance == nil {
 		panic(err)
@@ -227,9 +226,9 @@ READ_DOCS:
 		}
 
 		consumer.KeepActive()
-		messages, _, err :=consumerInstance.FetchMessages(ctx1, consumer.FetchMaxMessages)
+		messages, _, err := consumerInstance.FetchMessages(ctx1, consumer.FetchMaxMessages)
 
-		if len(messages)==0{
+		if len(messages) == 0 {
 			time.Sleep(time.Millisecond * time.Duration(500))
 		}
 
@@ -268,7 +267,7 @@ READ_DOCS:
 				offset = pop.NextOffset
 			}
 
-			if !offset.Equals(initOfffset){
+			if !offset.Equals(initOfffset) {
 				ok, err := queue.CommitOffset(qConfig, consumer, offset)
 				if !ok || err != nil {
 					panic(err)

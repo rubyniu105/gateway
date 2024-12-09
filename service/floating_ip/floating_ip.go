@@ -39,14 +39,14 @@ import (
 
 	log "github.com/cihub/seelog"
 	"github.com/j-keck/arping"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/env"
-	"infini.sh/framework/core/errors"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/wrapper/net"
-	"infini.sh/framework/core/task"
-	"infini.sh/framework/core/util"
-	"infini.sh/gateway/service/heartbeat"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/env"
+	"github.com/rubyniu105/framework/core/errors"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/task"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/core/wrapper/net"
+	"github.com/rubyniu105/gateway/service/heartbeat"
 )
 
 type EchoConfig struct {
@@ -98,7 +98,7 @@ var (
 
 func (module FloatingIPPlugin) Setup() {
 	ok, err := env.ParseConfig("floating_ip", &floatingIPConfig)
-	if ok && err != nil  &&global.Env().SystemConfig.Configs.PanicOnConfigError{
+	if ok && err != nil && global.Env().SystemConfig.Configs.PanicOnConfigError {
 		panic(err)
 	}
 
@@ -297,7 +297,7 @@ func (module FloatingIPPlugin) SwitchToStandbyMode(latency time.Duration) {
 
 	task.RunWithinGroup("standby", func(ctx context.Context) error {
 		aliveChan := make(chan bool)
-		client:=heartbeat.New()
+		client := heartbeat.New()
 		go func() {
 			defer func() {
 				if !global.Env().IsDebug {
@@ -478,7 +478,7 @@ func (module FloatingIPPlugin) StateMachine() {
 		}
 	}()
 
-	client:=heartbeat.New()
+	client := heartbeat.New()
 	aliveChan := make(chan bool)
 	go func() {
 		defer func() {

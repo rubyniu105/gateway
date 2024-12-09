@@ -508,8 +508,8 @@ loadrun -config ./loadrun.yml
 [LOAD-RUNNER] A testing suite runner
 [LOAD-RUNNER] 1.0.0_SNAPSHOT#001, 2023-02-21 02:49:57, 2023-12-31 10:10:10, b427e3657a1336b4839a7eff59f79f8e334f3934
 [02-21 10:50:05] [INF] [app.go:192] initializing loadrun
-[02-21 10:50:05] [INF] [app.go:193] using config: /Users/kassian/Workspace/infini/src/infini.sh/testing/suites/dev.yml
-[02-21 10:50:05] [INF] [instance.go:78] workspace: /Users/kassian/Workspace/infini/src/infini.sh/testing/data/loadrun/nodes/cfpihf15k34iqhpd4d00
+[02-21 10:50:05] [INF] [app.go:193] using config: /Users/kassian/Workspace/infini/src/github.com/rubyniu105/testing/suites/dev.yml
+[02-21 10:50:05] [INF] [instance.go:78] workspace: /Users/kassian/Workspace/infini/src/github.com/rubyniu105/testing/data/loadrun/nodes/cfpihf15k34iqhpd4d00
 [02-21 10:50:05] [INF] [app.go:399] loadrun is up and running now.
 [2023-02-21 10:50:05][TEST][SUCCESS] [setup/loadgen/cases/dummy] duration: 105(ms)
 

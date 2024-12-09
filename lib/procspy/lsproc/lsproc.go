@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"infini.sh/gateway/lib/procspy"
+	"github.com/rubyniu105/gateway/lib/procspy"
 )
 
 func main() {

@@ -21,7 +21,7 @@ import (
 	"github.com/dop251/goja_nodejs/require"
 	"github.com/pkg/errors"
 
-	"infini.sh/gateway/proxy/filters/script/javascript"
+	"github.com/rubyniu105/gateway/proxy/filters/script/javascript"
 )
 
 func init() {

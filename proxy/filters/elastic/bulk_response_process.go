@@ -28,19 +28,19 @@ package elastic
 
 import (
 	"fmt"
-	"infini.sh/framework/core/global"
+	"github.com/rubyniu105/framework/core/global"
 	"net/http"
 	"time"
 
 	log "github.com/cihub/seelog"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/elastic"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/queue"
-	"infini.sh/framework/core/rate"
-	"infini.sh/framework/core/util"
-	"infini.sh/framework/lib/fasthttp"
-	"infini.sh/gateway/common"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/elastic"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/queue"
+	"github.com/rubyniu105/framework/core/rate"
+	"github.com/rubyniu105/framework/core/util"
+	"github.com/rubyniu105/framework/lib/fasthttp"
+	"github.com/rubyniu105/gateway/common"
 )
 
 type BulkResponseProcess struct {
@@ -320,7 +320,7 @@ func NewBulkResponseValidate(c *config.Config) (pipeline.Filter, error) {
 
 	runner.id = util.GetUUID()
 
-	runner.bulkBufferPool=elastic.NewBulkBufferPool("bulk_response_process",1024*1024*1024,100000)
+	runner.bulkBufferPool = elastic.NewBulkBufferPool("bulk_response_process", 1024*1024*1024, 100000)
 
 	if runner.config.RetryFlow != "" && runner.config.PartialFailureRetry {
 		flow := common.MustGetFlow(runner.config.RetryFlow)

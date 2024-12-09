@@ -35,14 +35,14 @@ import (
 	log "github.com/cihub/seelog"
 	"github.com/dgraph-io/ristretto"
 	"github.com/go-redis/redis/v8"
-	"infini.sh/framework/core/config"
-	"infini.sh/framework/core/global"
-	"infini.sh/framework/core/pipeline"
-	"infini.sh/framework/core/stats"
-	"infini.sh/framework/core/util"
-	ccache "infini.sh/framework/lib/cache"
-	"infini.sh/framework/lib/fasthttp"
-	"infini.sh/gateway/common"
+	"github.com/rubyniu105/framework/core/config"
+	"github.com/rubyniu105/framework/core/global"
+	"github.com/rubyniu105/framework/core/pipeline"
+	"github.com/rubyniu105/framework/core/stats"
+	"github.com/rubyniu105/framework/core/util"
+	ccache "github.com/rubyniu105/framework/lib/cache"
+	"github.com/rubyniu105/framework/lib/fasthttp"
+	"github.com/rubyniu105/gateway/common"
 )
 
 type RequestCache struct {
